@@ -37,6 +37,7 @@ class App extends React.Component {
     }
 
     this.changeQuote = this.changeQuote.bind(this);
+    this.firstRandom = this.firstRandom.bind(this);
   }
 
   
@@ -52,6 +53,15 @@ class App extends React.Component {
   
     
   }
+
+  firstRandom() {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    let length = this.state.quotes.length
+    return this.setState({i: getRandomInt(length)})
+  }
+  
   
 
 
@@ -61,19 +71,14 @@ class App extends React.Component {
     return (
     <div className='body'>
       
-    <div id='quote-box'>
+    <div onLoad={this.firstRandom} id='quote-box'>
       <div id='text'>{this.state.quotes[this.state.i].quote}</div>
       <div id='author'>{this.state.quotes[this.state.i].author}</div>
-      <div id='grid'>
-      <div className="border bg-black">
-      <a onClick={this.changeQuote} href='#' id='new-quote'>New Quote</a>
+      <div className='flex'>
+      <a id="tweet-quote" target='_blank'  href={`https://twitter.com/intent/tweet?text=${this.state.quotes[this.state.i].quote} -${this.state.quotes[this.state.i].author} #quotes`}><i class="fa fa-twitter"></i></a>
+      <a className="bg-black" onClick={this.changeQuote} href='#' id='new-quote'>New Quote</a>
       </div>
-      <a target='_blank' className='button1' href={`https://twitter.com/intent/tweet?text=${this.state.quotes[this.state.i].quote} -${this.state.quotes[this.state.i].author} #quotes`}><i class="fab fa-twitter"></i></a>
-    
-      <div href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></div>
-        <a target='_blank' className='button2' href="https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=Beverly%20Sills&content=You%20may%20be%20disappointed%20if%20you%20fail%2C%20but%20you%20are%20doomed%20if%20you%20don%E2%80%99t%20try.&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button"></a>
-
-      </div>
+      
       
     </div>
 

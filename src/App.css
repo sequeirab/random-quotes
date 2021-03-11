@@ -20,6 +20,13 @@ body,
   background-color: white;
 }
 
+.flex {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+}
+
 #text {
   padding: 30px;
   text-align: center;
@@ -30,23 +37,10 @@ body,
   padding: 0px 30px;
 }
 
-#grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.5fr;
-  grid-template-rows: auto;
-  grid-area: "icon1 icon2 button";
-}
-
-.button1 {
-  height: 5px;
-  width: 5px;
-  grid-area: icon1;
-}
-
-.button2 {
-  height: 5px;
-  width: 5px;
-  grid-area: icon2;
+#tweet-quote {
+  align-self: center;
+  padding: 0.7rem;
+  background-color: black;
 }
 
 #new-quote {
@@ -55,11 +49,12 @@ body,
   text-decoration: none;
   color: white;
   font-size: 17px;
+  padding: 0.7rem;
+  text-align: right;
 }
 
-.border {
-  margin: 20px 20px;
-  grid-area: button;
+.fa-twitter {
+  color: white;
 }
 
 .bg-black {
