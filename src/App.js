@@ -75,8 +75,8 @@ class App extends React.Component {
       <div id='text'>{this.state.quotes[this.state.i].quote}</div>
       <div id='author'>{this.state.quotes[this.state.i].author}</div>
       <div className='flex'>
-      <a id="tweet-quote" target='_blank'  href={`https://twitter.com/intent/tweet?text=${this.state.quotes[this.state.i].quote} -${this.state.quotes[this.state.i].author} #quotes`}><i class="fa fa-twitter"></i></a>
-      <a className="bg-black" onClick={this.changeQuote} href='#' id='new-quote'>New Quote</a>
+      <a id="tweet-quote" target='_blank' rel="noreferrer"  href={`https://twitter.com/intent/tweet?text=${this.state.quotes[this.state.i].quote} -${this.state.quotes[this.state.i].author} #quotes`}><i class="fa fa-twitter"></i></a>
+      <a className="bg-black" onClick={this.changeQuote} id='new-quote'>New Quote</a>
       </div>
       
       
